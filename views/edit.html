@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rcu7vmv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <title>Edit</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav style="background-color: #FFE8D6;">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo black-text kyle">beauti</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+                    <ul id="desktop-nav" class="right hide-on-med-and-down">
+                        <li><a href="/recs" class="black-text big">recommendations</a></li>
+                        <li><button><a href="/list" class="black-text big">your list</a></button></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul id="mobile-nav" class="sidenav">
+                <li><a href="/recs" class="black-text"> recommendations</a></li>
+                <li><a href="/list" class="black-text"> your list</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="section flow-text" id="details">
+            <h1>Face wash</h1>
+            <table>
+                <tr>
+                    <th>Step:</th>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>Type:</th>
+                    <td>soap</td>
+                </tr>
+                <tr>
+                    <th>Cost:</th>
+                    <td>$16.99</td>
+                </tr>
+                <tr>
+                    <th>Descriptions:</th>
+                    <td>
+                        Purchased from target, look into cheaper
+                        <br>not bad, but makes me dry
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="controls">
+            <a class="btn-large waves-effect waves-light orange left modal-trigger" href="#edit">
+                <i class="material-icons right">edit</i>
+                Edit
+            </a>
+            <a class="btn-large waves-effect waves-light red right">
+                <i class="material-icons right">delete</i>
+                Delete
+            </a>
+        </div>
+
+
+        <div class="modal" id="edit">
+
+            <div class="modal-content">
+
+                <h2>Edit item:</h2>
+                <form id="updateForm">
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <input type="text" id="titleInput" name="title" class="validate" data-length="45" required>
+                            <label for="titleInput">name:</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="number" id="priorityInput" name="priority" class="validate" min=1 max=10 value=2>
+                            <label for="priorityInput">step:</label>
+                        </div>
+    
+                        <div class="input-field col s6">
+                            <select type="number" id="typeInput" name="type">
+                                <option value="" disabled>type</option>
+                                <option value=1>soap</option>
+                                <option value=2>serum</option>
+                                <option value=3>lotion</option>
+                                <option value=4>sunscreen</option>
+                            </select>
+                            <label for="typeInput">Subject:</label>
+                        </div>
+    
+                        <div class="input-field col s4">
+                            <input type="text" id="costInput" name="cost" class="validate">
+                            <label for="priorityInput">cost:</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea class="materialize-textarea" id="descriptionInput" name="description" data-length="150">Do odd questions in the range #155 - #207 (chapter 11). Remember to show your work!</textarea>
+                            <label for="descriptionInput">description:</label>
+                        </div>
+    
+                    </div>
+                </form>
+                <!-- A section for the footer of the modal -->
+                <div class="modal-footer">
+                    <!-- Since the submit button is not within the form, it must have the form attribute specified-->
+                    <button class="btn waves-effect waves-light " type="submit" form="updateForm">
+                        <i class="material-icons right">send</i>
+                        Submit
+                    </button>
+                    <button class="modal-close waves-effect waves-green btn-flat" >Nevermind</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/scripts/materializeAutoInit.js"></script>
+
+</body>
+</html>

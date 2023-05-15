@@ -1,11 +1,11 @@
 @font-face {
     font-family: "KyivTypeSansBlack";
-    src: url('fonts/webFonts/KyivTypeSansBlack/font.woff2') format('woff2'), url('fonts/webFonts/KyivTypeSansBlack/font.woff') format('woff');
+    src: url('/fonts/webFonts/KyivTypeSansBlack/font.woff2') format('woff2'), url('/fonts/webFonts/KyivTypeSansBlack/font.woff') format('woff');
 }
 
 @font-face {
     font-family: "KyivTypeSansBold";
-    src: url('fonts/webFonts/KyivTypeSansBold/font.woff2') format('woff2'), url('fonts/webFonts/KyivTypeSansBold/font.woff') format('woff');
+    src: url('/fonts/webFonts/KyivTypeSansBold/font.woff2') format('woff2'), url('/fonts/webFonts/KyivTypeSansBold/font.woff') format('woff');
 }
 
 /* width */
@@ -30,7 +30,7 @@ a {
 }
 
 * {
-    font-family: 'League Spartan', sans-serif !important;
+    font-family: 'League Spartan', sans-serif;
 }
 
 .kyle {
