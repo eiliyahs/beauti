@@ -14,3 +14,12 @@ db.execute(select_skinCareType_sql,
         console.log(results);
     }
 );
+
+const select_skinCare_sql = `
+SELECT *
+FROM skinCare
+JOIN skinCareType
+    ON skinCare.skinCareTypeId = skinCareType.skinCareTypeId
+ORDER BY
+    skinCare.skinCareId;
+`;
