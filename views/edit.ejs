@@ -41,25 +41,24 @@
     
     <div class="container">
         <div class="section flow-text" id="details">
-            <h1>Face wash</h1>
+            <h1><%= sc.name %></h1>
             <table>
                 <tr>
                     <th>Step:</th>
-                    <td>1</td>
+                    <td><%= sc.step %></td>
                 </tr>
                 <tr>
                     <th>Type:</th>
-                    <td>soap</td>
+                    <td><%= sc.skinCareType %></td>
                 </tr>
                 <tr>
                     <th>Cost:</th>
-                    <td>$16.99</td>
+                    <td><%= sc.cost %></td>
                 </tr>
                 <tr>
-                    <th>Descriptions:</th>
+                    <th>Description:</th>
                     <td>
-                        Purchased from target, look into cheaper
-                        <br>not bad, but makes me dry
+                        <%= sc.description %>
                     </td>
                 </tr>
             </table>
@@ -70,7 +69,7 @@
                 <i class="material-icons right">edit</i>
                 Edit
             </a>
-            <a class="btn-large waves-effect waves-light red right">
+            <a class="btn-large waves-effect waves-light red right" href="/list/ <%= sc.skinCareId %>/delete">
                 <i class="material-icons right">delete</i>
                 Delete
             </a>
@@ -82,35 +81,35 @@
             <div class="modal-content">
 
                 <h2>Edit item:</h2>
-                <form id="updateForm">
+                <form id="updateForm" method="post" >
                     <div class="row">
                         <div class="input-field col s8">
-                            <input type="text" id="titleInput" name="title" class="validate" data-length="45" required>
-                            <label for="titleInput">name:</label>
+                            <input type="name" id="nameInput" name="name" class="validate" data-length="45" required value="<%= sc.name %>">
+                            <label for="nameInput">name:</label>
                         </div>
                         <div class="input-field col s4">
-                            <input type="number" id="priorityInput" name="priority" class="validate" min=1 max=10 value=2>
+                            <input type="number" id="priorityInput" name="step" class="validate" min=1 max=10 value="<%= sc.step %>">
                             <label for="priorityInput">step:</label>
                         </div>
     
                         <div class="input-field col s6">
-                            <select type="number" id="typeInput" name="type">
-                                <option value="" disabled>type</option>
-                                <option value=1>soap</option>
-                                <option value=2>serum</option>
-                                <option value=3>lotion</option>
-                                <option value=4>sunscreen</option>
+                            <select id="typeInput" name="type" required>
+                                <option value="" disabled>Choose your type</option>
+                                <option value="1" <% if (sc.skinCareTypeId == 1) { %> selected <% } %>>soap</option>
+                                <option value="2" <% if (sc.skinCareTypeId == 2) { %> selected <% } %>>serum</option>
+                                <option value="3" <% if (sc.skinCareTypeId == 3) { %> selected <% } %>>lotion</option>
+                                <option value="4" <% if (sc.skinCareTypeId == 4) { %> selected <% } %>>sunscreen</option>
                             </select>
-                            <label for="typeInput">Subject:</label>
-                        </div>
+                            <label for="typeInput">Type:</label>
+                        </div>                        
     
                         <div class="input-field col s4">
-                            <input type="text" id="costInput" name="cost" class="validate">
-                            <label for="priorityInput">cost:</label>
+                            <input type="text" id="costInput" name="cost" class="validate" value="<%= sc.cost %>">
+                            <label for="costInput">cost:</label>
                         </div>
 
                         <div class="input-field col s12">
-                            <textarea class="materialize-textarea" id="descriptionInput" name="description" data-length="150">Do odd questions in the range #155 - #207 (chapter 11). Remember to show your work!</textarea>
+                            <textarea class="materialize-textarea" id="descriptionInput" name="description" data-length="150"> <%= sc.description %> </textarea>
                             <label for="descriptionInput">description:</label>
                         </div>
     
